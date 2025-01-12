@@ -1,0 +1,280 @@
+@use "sass:math";
+
+@import "settings/base";
+@import "settings/scrollbar";
+@import "settings/mixins";
+@import "settings/fonts";
+@import "general";
+
+$fontFamily: "Montserrat", sans-serif;
+$fontSize: rem(16);
+$mainColor: #e4e5ea;
+$color-1: #656566;
+$color-2: #4077f3;
+$gradient-1: linear-gradient(to right, #fcb045 24%, #fd8757 51%, #ff3f78 80%);
+$gradient-2: linear-gradient(to right, #fcb045 37%, #fd1d1d 100%);
+
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1140;
+$containerPadding: 30;
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+$pc: em($containerWidth);
+$laptop: em(1439.98);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+$responsiveType: 1;
+
+@import "settings/null";
+
+/* ================= Base Body Style ================= */
+body {
+  background: radial-gradient(
+      circle 600px at 0% 40%,
+      rgba(150, 26, 26, 0.25),
+      transparent
+    ),
+    radial-gradient(
+      circle 600px at 50% 5%,
+      rgba(131, 58, 180, 0.2),
+      transparent
+    ),
+    #000;
+
+  @include maxMobile {
+    background: radial-gradient(
+        circle 600px at 0% 100%,
+        rgba(150, 26, 26, 0.6),
+        transparent
+      ),
+      radial-gradient(
+        circle 600px at 100% 0%,
+        rgba(131, 58, 180, 0.15),
+        transparent
+      ),
+      radial-gradient(
+        circle 300px at 0% 0%,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      ),
+      #000;
+  }
+
+  // Scroll is locked
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  // Page has been loaded
+  .loaded & {
+    visibility: visible;
+  }
+}
+
+/* ================= Page Wrapper ================= */
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  > main {
+    flex: 1 1 auto;
+  }
+
+  > * {
+    min-width: 0;
+  }
+}
+
+.sphere-1 {
+  @include gradient-sphere(
+    $size: 83px,
+    $top: 83px,
+    $left: 40%,
+    $color1: #ffd0d0,
+    $stop1: 0%,
+    $opacity1: 0.67,
+    $color2: #d45d5d,
+    $stop2: 45%,
+    $opacity2: 0.33,
+    $color3: #a73131,
+    $stop3: 70%,
+    $opacity3: 0.31,
+    $color4: #821919,
+    $stop4: 90%,
+    $opacity4: 0.31,
+    $box-shadow: 3px 6px 27px -10px rgba(#df7d7d, 0.25),
+    $blur: 0px,
+    $opacity: 0.8
+  );
+
+  @include maxMobile {
+    display: none;
+  }
+}
+
+.sphere-2 {
+  @include gradient-sphere(
+    $size: 60px,
+    $top: 0px,
+    $left: 58%,
+    $color1: #ecd0ff,
+    $stop1: 0%,
+    $opacity1: 0.8,
+    $color2: #a15dcf,
+    $stop2: 45%,
+    $opacity2: 0.3,
+    $color3: #7631a4,
+    $stop3: 70%,
+    $opacity3: 0.26,
+    $color4: #561880,
+    $stop4: 90%,
+    $opacity4: 0.29,
+    $box-shadow: 3px 6px 27px -10px rgba(#b176d9, 0.25),
+    $blur: 10px,
+    $opacity: 0.8
+  );
+
+  @include maxMobile {
+    display: none;
+  }
+}
+
+.sphere-3 {
+  @include gradient-sphere(
+    $size: 28px,
+    $top: 55%,
+    $left: 57%,
+    $color1: #ffd0d0,
+    $stop1: 0%,
+    $opacity1: 0.6,
+    $color2: #d45d5d,
+    $stop2: 45%,
+    $opacity2: 0.31,
+    $color3: #a73131,
+    $stop3: 70%,
+    $opacity3: 0.33,
+    $color4: #821919,
+    $stop4: 90%,
+    $opacity4: 0.29,
+    $box-shadow: 3px 6px 27px -10px rgba(#df7d7d, 0.25),
+    $blur: 5px,
+    $opacity: 0.8
+  );
+
+  @include maxMobile {
+    display: none;
+  }
+}
+
+.sphere-4 {
+  display: none;
+
+  @include gradient-sphere(
+    $size: 50px,
+    $top: 25%,
+    $left: 92%,
+    $color1: #ecd0ff,
+    $stop1: 0%,
+    $opacity1: 0.8,
+    $color2: #a15dcf,
+    $stop2: 45%,
+    $opacity2: 0.3,
+    $color3: #7631a4,
+    $stop3: 70%,
+    $opacity3: 0.26,
+    $color4: #561880,
+    $stop4: 90%,
+    $opacity4: 0.29,
+    $box-shadow: 3px 6px 27px -10px rgba(#b176d9, 0.25),
+    $blur: 10px,
+    $opacity: 0.8
+  );
+
+  @include maxMobile {
+    display: block;
+  }
+}
+
+.sphere-5 {
+  display: none;
+
+  @include gradient-sphere(
+    $size: 50px,
+    $top: 41%,
+    $left: 8%,
+    $color1: #ffd0d0,
+    $stop1: 0%,
+    $opacity1: 0.67,
+    $color2: #d45d5d,
+    $stop2: 45%,
+    $opacity2: 0.33,
+    $color3: #a73131,
+    $stop3: 70%,
+    $opacity3: 0.31,
+    $color4: #821919,
+    $stop4: 90%,
+    $opacity4: 0.31,
+    $box-shadow: 3px 6px 27px -10px rgba(#df7d7d, 0.25),
+    $blur: 10px,
+    $opacity: 0.8
+  );
+
+  @include maxMobile {
+    display: block;
+  }
+}
+
+@if ($responsiveType==1) {
+  // Responsive
+  [class*="__container"] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin: 0 auto;
+    }
+
+    @if ($containerPadding>0) {
+      padding: 0 rem(math.div($containerPadding, 2));
+    }
+  }
+} @else {
+  // According to breakpoints
+  [class*="__container"] {
+    margin: 0 auto;
+
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+  }
+}
+
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";

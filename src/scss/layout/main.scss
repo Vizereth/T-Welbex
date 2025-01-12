@@ -1,0 +1,158 @@
+.content {
+  &__wrapper {
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include maxMobile {
+      margin-top: 40px;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 45px;
+    }
+  }
+
+  &__col {
+    max-width: 350px;
+    width: 100%;
+
+    &--2 {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+
+      @include maxMobile {
+        text-align: left;
+      }
+    }
+  }
+
+  &__title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include maxMobile {
+      gap: 15px;
+    }
+
+    h1,
+    h2 {
+      font-size: rem(48);
+      letter-spacing: rem(2);
+
+      @include maxMobile {
+        font-size: rem(40);
+      }
+
+      @include maxMobileSmall {
+        font-size: rem(36);
+      }
+    }
+
+    h1 {
+      @include gradient-text($gradient-1);
+    }
+  }
+
+  &__title-desc {
+    font-size: rem(18);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    font-size: rem(18);
+  }
+
+  &__text-highlight {
+    text-transform: uppercase;
+    letter-spacing: 5%;
+    @include gradient-text($gradient-2);
+
+    @include maxMobile {
+      text-transform: none;
+      letter-spacing: 0;
+    }
+  }
+
+  &__cards {
+    margin-top: 41px;
+    display: flex;
+    justify-content: flex-end;
+
+    @include maxMobile {
+      display: none;
+    }
+  }
+
+  &__cards-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__card {
+    max-width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__card-title {
+    font-size: rem(18);
+    letter-spacing: 5%;
+    text-transform: uppercase;
+  }
+
+  &__cards-mobile {
+    margin-top: 20px;
+    display: none;
+    gap: 10px;
+
+    @include maxMobile {
+      display: flex;
+    }
+  }
+
+  &__cards-mobile-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__card-mobile {
+    font-size: rem(13);
+    letter-spacing: 5%;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &:before {
+      content: "";
+      background: $gradient-1;
+      width: 10px;
+      height: 1px;
+    }
+  }
+
+  &__link {
+    margin-top: 61px;
+    align-self: flex-end;
+    background-color: $color-2;
+    display: block;
+    padding: 21px 35px;
+    text-align: center;
+
+    @include hover-opacity;
+
+    @include maxMobile {
+      display: none;
+    }
+  }
+}

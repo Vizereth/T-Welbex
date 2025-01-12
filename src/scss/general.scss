@@ -1,0 +1,54 @@
+@mixin gradient-sphere(
+  $size,
+  $top, 
+  $left,
+  $color1,
+  $stop1,
+  $opacity1,
+  $color2,
+  $stop2,
+  $opacity2,
+  $color3,
+  $stop3,
+  $opacity3,
+  $color4,
+  $stop4,
+  $opacity4,
+  $box-shadow,
+  $blur,
+  $opacity,
+) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba($color1, $opacity1) $stop1,
+    rgba($color2, $opacity2) $stop2,
+    rgba($color3, $opacity3) $stop3,
+    rgba($color4, $opacity4) $stop4
+  );
+  box-shadow: $box-shadow;
+  filter: blur($blur);
+  opacity: $opacity;
+}
+
+@mixin hover-opacity {
+  transition: 0.15s ease-out;
+
+  @include minTablet {
+    &:hover {
+      opacity: 0.65;
+    }
+  }
+}
+
+@mixin gradient-text($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text; /* For Safari */
+  background-clip: text;
+  color: transparent;
+}

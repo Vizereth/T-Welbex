@@ -1,0 +1,154 @@
+.footer {
+  background-color: black;
+  margin-top: 124px;
+  padding: 20px 0;
+
+  @include maxMobile {
+    margin-top: 55px;
+    padding: 45px 0 60px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+
+    @include maxMobile {
+      gap: 50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include maxMobile {
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 30px;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &--contact {
+      text-align: right;
+
+      @include maxMobile {
+        text-align: left;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title {
+    color: $color-1;
+    font-size: rem(14);
+    letter-spacing: 5%;
+    text-transform: uppercase;
+
+    @include maxMobile {
+      font-size: rem(12);
+    }
+  }
+
+  &__link {
+    @include hover-opacity;
+
+    &--desktop {
+      @include maxMobile {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include maxMobile {
+        display: inline;
+      }
+    }
+
+    @include maxMobile {
+      font-size: rem(14);
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    @include maxMobile {
+      justify-content: flex-start;
+    }
+  }
+
+  &__social-link {
+    width: auto;
+    height: 20px;
+    @include hover-opacity;
+
+    @include maxMobile {
+      width: auto;
+      height: 24px;
+    }
+  }
+
+  &__menu-cols {
+    display: flex;
+    gap: 52px;
+
+    @include maxMobile {
+      gap: 45px;
+    }
+  }
+
+  &__contact-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include maxMobile {
+      gap: 10px;
+    }
+  }
+
+  &__contact {
+    &--address {
+      @include maxMobile {
+        font-size: rem(14);
+      }
+    }
+  }
+
+  &__copyright {
+    opacity: 0.8;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    text-align: right;
+    font-size: rem(12);
+
+    @include maxMobile {
+      align-self: flex-start;
+      text-align: left;
+    }
+  }
+
+  &__copyright-policies {
+    text-decoration: underline;
+    @include hover-opacity;
+  }
+}

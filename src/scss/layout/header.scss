@@ -1,0 +1,118 @@
+.header {
+  margin-top: 46px;
+
+  @include maxMobile {
+    background-color: black;
+    margin-top: 0;
+    padding: 20px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__col {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+
+    &--1 {
+      @include maxTablet {
+        justify-content: space-between;
+      }
+
+      @include maxMobile {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__logo {
+    max-width: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 52px;
+
+    @include maxTablet {
+      margin-right: 0;
+    }
+
+    @include maxMobile {
+      display: none;
+    }
+
+    &-img {
+      width: 140px;
+      height: auto;
+    }
+
+    &-text {
+      font-size: rem(10);
+    }
+  }
+
+  &__nav,
+  &__contact {
+    margin-top: 4px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+    @include maxMobileSmall {
+      gap: 16px;
+    }
+  }
+
+  &__list-item:last-of-type {
+    @include maxMobile {
+      display: none;
+    }
+  }
+
+  &__list-link,
+  &__social-link {
+    @include hover-opacity;
+
+  }
+
+  &__list-link {
+    cursor: pointer;
+    text-transform: capitalize;
+
+    @include maxMobile {
+      font-size: rem(14);
+      text-transform: uppercase;
+
+    }
+
+    @include maxMobileSmall {
+      font-size: rem(12);
+    }
+  }
+
+  &__contact {
+    display: flex;
+    gap: 47px;
+
+    @include maxTablet {
+      display: none;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 30px;
+
+    img {
+      width: auto;
+      height: 20px;
+    }
+  }
+}
