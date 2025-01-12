@@ -2,7 +2,7 @@
 
 ## Deploy
 
-https://sophrona.github.io/REPOSITORY-NAME
+https://vizereth.github.io/T-Welbex
 
 ## Project setup
 ```
