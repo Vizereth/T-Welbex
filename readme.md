@@ -1,22 +1,18 @@
-# PROJECT NAME
+# Тестовое задание - макет Welbex
 
 ## Deploy
 
-https://vizereth.github.io/T-Welbex
+https://vizereth.github.io/test-welbex
 
-## Project setup
+## Установка зависимостей
 ```
 npm install
 ```
 
-## Compiles and hot-reloads for development
+## Запуск локального сервера
 ```
 npm run dev
 ```
 
-## Compiles and minifies for production
-```
-npm run build
-```
 
 
